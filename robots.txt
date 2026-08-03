@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /privacy.html
-Disallow: /terms.html
-
-Sitemap: https://www.akanabylogistics.com/sitemap.xml
