@@ -15,6 +15,7 @@ No build step, no framework, no npm, no image files. Upload the folder and it ru
 | `og-image.jpg` | 1200×630 preview card shown when the link is shared on Facebook, WhatsApp, iMessage or X |
 | `robots.txt` | Crawl rules + sitemap pointer |
 | `sitemap.xml` | The homepage URL (the legal pages are `noindex`, so they stay out) |
+| `404.html` | Branded not-found page with a call-to-action, served automatically by Vercel for unmatched routes |
 
 ## Deploy
 
@@ -28,7 +29,8 @@ Drag the folder into Netlify, Vercel or Cloudflare Pages, or upload it to any ho
 
 **Must do**
 
-- [ ] **Replace the five sample reviews.** They are labelled as samples on the page on purpose. Paste in real Google reviews, keep the reviewer's first name and town, then delete the amber "sample content" banner and the `Sample` chips. Do not add `aggregateRating` to the structured data until you have real ratings — invented review markup violates Google's policy and can get the listing suppressed.
+- [x] **The placeholder reviews are gone.** The old "sample review" cards have been replaced with an honest trust section (`#reviews`, headed "Your trust matters") that makes no claims about ratings or testimonials. When you have real, verified reviews on your Google Business Profile, replace that section with real review cards — keep names to first name + town, and only add `aggregateRating` to the JSON-LD once you have real ratings to report. Invented review markup violates Google's policy and can get the listing suppressed.
+- [ ] **Add real photos of the trucks.** The hero and about sections currently use hand-built SVG illustrations because no real truck photographs were available at the time of this update — see "Add photos of the actual trucks" further down for exactly where they go. Do not substitute stock or AI-generated tow truck photos; the illustrations are the honest placeholder until real photos are supplied.
 - [ ] **Decide how the quote form should send.** Right now, submitting it opens the visitor's email app with every field pre-filled and addressed to `info.akanaby@gmail.com`. That works with zero setup but loses leads on phones with no mail app configured. To capture leads properly, sign up for Formspree / Basin / Web3Forms and replace the `window.location.href='mailto:...'` block near the bottom of `index.html` with a `fetch()` POST to your endpoint. The comment above that block marks the spot.
 - [ ] **Check the WhatsApp number.** The floating green button and the footer icon link to `wa.me/13512358976`. If (351) 235-8976 isn't registered on WhatsApp, register it or delete those two links.
 - [ ] **Verify the map pin.** The JSON-LD and the `geo.position` / `ICBM` meta tags use approximate coordinates for 50 Tanner Street (`42.6301, -71.3078`). Right-click the exact spot in Google Maps, copy the real lat/long and paste them in.
